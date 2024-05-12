@@ -14,7 +14,7 @@ class Drop {
             v.add(this.center);
             this.vertices[i] = v;
         }
-        this.color = random(0,200);
+        // this.color = 255;
     }
 
     marbel(other) {
@@ -31,8 +31,9 @@ class Drop {
         }
     }
 
-    show() {
-        fill(this.color);
+    show(genColorR,genColorG,genColorB,alphaVal) {
+        let c = color(genColorR,genColorG,genColorB,alphaVal);
+        fill(c);
         beginShape();
         for (let v of this.vertices) {
             vertex(v.x, v.y);
