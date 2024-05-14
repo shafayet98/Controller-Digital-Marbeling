@@ -3,6 +3,7 @@ node_initCircleResolution.title = "Circle Resolution (Init)";
 node_initCircleResolution.pos = [10, 50];
 graph.add(node_initCircleResolution);
 node_initCircleResolution.setValue(12);
+node_initCircleResolution.color = "#fdf0d5";
 
 
 var node_scaleCircleResolutionSale = LiteGraph.createNode("math/scale");
@@ -11,6 +12,7 @@ node_scaleCircleResolutionSale.pos = [220, 50];
 graph.add(node_scaleCircleResolutionSale);
 node_scaleCircleResolutionSale.properties.factor = 2;
 node_initCircleResolution.connect(0, node_scaleCircleResolutionSale, 0);
+node_scaleCircleResolutionSale.color = "#fdf0d5";
 
 
 var node_watch_CircleRes = LiteGraph.createNode("basic/watch");
@@ -18,6 +20,7 @@ node_watch_CircleRes.pos = [320, 120];
 node_watch_CircleRes.title = "Circle Resolution";
 graph.add(node_watch_CircleRes);
 node_scaleCircleResolutionSale.connect(0, node_watch_CircleRes, 0);
+node_watch_CircleRes.color = "#fdf0d5";
 
 circleResolution = 10;
 // scale up

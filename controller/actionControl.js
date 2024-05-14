@@ -5,10 +5,16 @@ node_btn_enable_mouse.properties.text = "Double click Paint w/Mouse";
 node_btn_enable_mouse.properties.font_size = 10;
 graph.add(node_btn_enable_mouse);
 
+
+let accessGivenColor = "#ccd5ae";
+let accessDeniedColor = "#e63946";
+
 node_btn_enable_mouse.onDblClick = function(){
     enableMousePaint = true;
     enableAutogenerator = false;
-    console.log(enableMousePaint);
+    this.color = accessGivenColor;
+    node_btn_enable_auto.color = accessDeniedColor;
+    node_btn_enable_tineLine.color = accessDeniedColor;
 }
 
 
@@ -20,7 +26,27 @@ node_btn_enable_auto.properties.font_size = 10;
 graph.add(node_btn_enable_auto);
 
 node_btn_enable_auto.onDblClick = function(){
+    this.color = accessGivenColor;
     enableMousePaint = false;
     enableAutogenerator = true;
-    console.log(enableMousePaint);
+    node_btn_enable_mouse.color = accessDeniedColor;
+    node_btn_enable_tineLine.color = accessDeniedColor;
+}
+
+// enableTineLine
+
+var node_btn_enable_tineLine = LiteGraph.createNode("widget/button");
+node_btn_enable_tineLine.title = "A/C: Tine Line";
+node_btn_enable_tineLine.pos = [400, 700];
+node_btn_enable_tineLine.properties.text = "Double click: Draw TineLine";
+node_btn_enable_tineLine.properties.font_size = 10;
+graph.add(node_btn_enable_tineLine);
+
+node_btn_enable_tineLine.onDblClick = function(){
+    enableMousePaint = false;
+    enableAutogenerator = false;
+    enableTineLine = true;
+    this.color = accessGivenColor;
+    node_btn_enable_mouse.color = accessDeniedColor;
+    node_btn_enable_auto.color = accessDeniedColor;
 }

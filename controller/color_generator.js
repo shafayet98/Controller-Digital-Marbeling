@@ -4,6 +4,7 @@ node_color_generate.pos = [10, 500];
 node_color_generate.properties.text = "Double click Generate Color";
 node_color_generate.properties.font_size = 10;
 graph.add(node_color_generate);
+node_color_generate.color = "#ade8f4";
 
 node_color_generate.onDblClick = function(){
     genColorR = Math.floor(Math.random()*255);
@@ -12,13 +13,14 @@ node_color_generate.onDblClick = function(){
 }
 
 var node_alphaControl = LiteGraph.createNode("widget/knob");
-node_alphaControl.title = "Alpha";
+node_alphaControl.title = "APH";
 node_alphaControl.pos = [200, 500];
 graph.add(node_alphaControl);
 node_alphaControl.onMouseLeave = function(){
     alphaVal = Math.floor(this.value * 255);
     console.log(genColorR,genColorG,genColorB,alphaVal);
 }
+node_alphaControl.color = "#ade8f4";
 
 
 

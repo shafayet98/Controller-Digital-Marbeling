@@ -31,8 +31,17 @@ class Drop {
         }
     }
 
+    tine(x,z,c){
+        let u = 1/ pow(2,1/c);
+        for (let v of this.vertices) {
+            v.x = v.x;
+            v.y = v.y + z * pow(u,abs(v.x-x));
+        }
+    }
+
     show(genColorR,genColorG,genColorB,alphaVal) {
         let c = color(genColorR,genColorG,genColorB,alphaVal);
+        // noStroke();
         fill(c);
         beginShape();
         for (let v of this.vertices) {
